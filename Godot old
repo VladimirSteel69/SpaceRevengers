@@ -1,0 +1,42 @@
+using Godot;
+using System;
+
+public partial class CharacterBody2D : Godot.CharacterBody2D
+{
+	private float d = 0.0f;
+    private float angle = Mathf.Pi/6;
+	
+
+	private const float speed = 4.0f;
+
+	public void _on_right_btn_pressed()
+	{
+		Marker2D point = GetNode<Marker2D>("../point");
+        Position = point.Position + (Position - point.Position).Rotated(angle*d);
+	}
+	public void _on_left_btn_pressed()
+	{
+		Marker2D point = GetNode<Marker2D>("../point");
+        Position = point.Position + (Position - point.Position).Rotated(-angle*d);
+	}
+    // Called every frame. 'delta' is the elapsed time since the previous frame.
+    public override void _PhysicsProcess(double delta)
+    {
+		Marker2D point = GetNode<Marker2D>("../point");
+		if(Input.IsActionPressed("right"))
+		{
+        	Position = point.Position + (Position - point.Position).Rotated(angle*0.05f);
+		}
+		if(Input.IsActionPressed("left"))
+		{
+			
+        	Position = point.Position + (Position - point.Position).Rotated(-angle*0.05f);
+		}
+		
+		 LookAt(point.Position);
+
+    }
+
+	
+
+}
