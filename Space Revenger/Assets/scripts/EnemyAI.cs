@@ -8,11 +8,7 @@ public class EnemyAI : MonoBehaviour
     public Transform target;
 
     public float speed = 5f;
-<<<<<<< Updated upstream
-    public float rotateSpeed = 500f;
-=======
     public float rotateSpeed = 2000f;
->>>>>>> Stashed changes
 
     private Rigidbody2D rb;
 
