@@ -8,7 +8,7 @@ public class EnemyAI : MonoBehaviour
     public Transform target;
 
     public float speed = 5f;
-    public float rotateSpeed = 200f;
+    public float rotateSpeed = 500f;
 
     private Rigidbody2D rb;
 
