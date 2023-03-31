@@ -122,7 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 4590949422460302815, guid: c90fd12472fc45b4a898a0b0eec0d2f1, type: 3}
   speed: 1.5
-  rotateSpeed: 200
+  rotateSpeed: 2000
 --- !u!60 &5767905802506482084
 PolygonCollider2D:
   m_ObjectHideFlags: 0

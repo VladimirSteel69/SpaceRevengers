@@ -35,17 +35,17 @@ public class Enemy_Spawn_Script : MonoBehaviour
             int rand = Random.Range(0, enemy.Length);
             GameObject enemyToSpawn = enemy[rand];
             if(spawn_side == 0)
-                Instantiate(enemyToSpawn, new Vector3(-5f, Random.Range(2, 6f), 0), Quaternion.identity);
+                Instantiate(enemyToSpawn, new Vector3(-4f, Random.Range(2, 6f), 0), Quaternion.identity);
             if(spawn_side == 1)
-                Instantiate(enemyToSpawn, new Vector3(5f, Random.Range(2, 6f), 0), Quaternion.identity);
+                Instantiate(enemyToSpawn, new Vector3(4f, Random.Range(2, 6f), 0), Quaternion.identity);
             if(spawn_side == 2)
-                Instantiate(enemyToSpawn, new Vector3(Random.Range(-5,5f), 7f, 0), Quaternion.identity);
+                Instantiate(enemyToSpawn, new Vector3(Random.Range(-4,4f), 6f, 0), Quaternion.identity);
             if(spawn_side == 3)
-                Instantiate(enemyToSpawn, new Vector3(Random.Range(-5,5f), -7f, 0), Quaternion.identity);
+                Instantiate(enemyToSpawn, new Vector3(Random.Range(-4,4f), -6f, 0), Quaternion.identity);
             if(spawn_side == 4)
-                Instantiate(enemyToSpawn, new Vector3(-5f, Random.Range(-6, 2f), 0), Quaternion.identity);
+                Instantiate(enemyToSpawn, new Vector3(-4f, Random.Range(-6, -2f), 0), Quaternion.identity);
             if(spawn_side == 5)
-                Instantiate(enemyToSpawn, new Vector3(5f, Random.Range(-6, 2f), 0), Quaternion.identity);
+                Instantiate(enemyToSpawn, new Vector3(4f, Random.Range(-6, -2f), 0), Quaternion.identity);
             
         }
     }
