@@ -32,8 +32,14 @@ public class EnemyAI : MonoBehaviour
         rb.velocity = transform.up * speed;
     }
 
-    void OnTriggerEnter2D()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.TryGetComponent<Bullet_AI>(out Bullet_AI Bullet)){
+            Destroy(gameObject);
+        }
+        
+    }
+    private void OnCollisionEnter2D(Collision2D collision) {
         Destroy(gameObject);
     }
 }

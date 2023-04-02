@@ -6,9 +6,29 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 200f; //variabila de viteza
 
+    // Gun things
+    [SerializeField] private GameObject Bullet;
+    [SerializeField] private Transform FiringPoint;
+    [SerializeField] private float fireRate = 0.5f;
+    private float fireTimer = 0.5f;
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if(fireTimer <= 0f){
+        Shoot();
+        fireTimer = fireRate;
+        }
+    }
+
+    private void Shoot(){
+        Instantiate(Bullet, FiringPoint.position, FiringPoint.rotation);
+    }
+
+    
+
+
     void Update()
     {
-        //aici nu am pus nimic deocamdata
+            fireTimer -= Time.deltaTime;
     }
 
     void FixedUpdate()
@@ -29,6 +49,13 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
+
+        // Gun things (if same angle shoot)
+        /*if(enemy)
+            if(Vector3.Angle(enemy.transform.forward, transform.position - enemy.transform.position) < angle && fireTimer <= 0f){
+                Shoot();
+                fireTimer = fireRate;
+        }else fireTimer -= Time.deltaTime;*/
     }
 
 }
