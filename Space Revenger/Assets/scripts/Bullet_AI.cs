@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet_AI : MonoBehaviour
 {
 
-    [SerializeField] private float speed = 10f;
+    [SerializeField] public float speed = 10f;
 
     [SerializeField] private float lifeTime = 100f;
 
