@@ -3,7 +3,7 @@
 
         Welcome Space Captain to your own adventure!
  
- This is an story...
+ This is an story about...
  
  
 -----------------------------------
