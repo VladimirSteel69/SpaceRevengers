@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 200f; //variabila de viteza
@@ -10,32 +11,56 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject Bullet;
     [SerializeField] private Transform FiringPoint;
     [SerializeField] public float fireRate = 0.2f;
-    private float fireTimer;
-    public float NextToFire;
+    [SerializeField] private float fireTimer;
+    [SerializeField] public float NextToFire;
+
+
     
+    //Upgrade Things
+    [SerializeField] public int toPayAtk = 10;
+    [SerializeField] public int toPayMove = 10;
+
+
     //AttackSpeed Upgrade
     public void ButtonPressedAtSpd(){
-        if(fireRate > 0.1f)
-        fireRate += 0.05f;
+        if(fireRate > 0.1f && MoneyScript.Instance.currentMoney >= toPayAtk)
+        {
+            fireRate += 0.05f;                                  //Luam Upgradeul
+            MoneyScript.Instance.currentMoney -= toPayAtk;      //Scadem cat costa din bani
+            toPayAtk = toPayAtk + toPayAtk/10;                  //Marim Pretu de Upgrade
+        }
+
     }
 
+    //MovementSpeed Upgrade
+    public void ButtonPressedMoveSpd(){
+        if(MoneyScript.Instance.currentMoney >= toPayMove)
+        {
+            speed += 10f;
+            MoneyScript.Instance.currentMoney -= toPayMove;
+            toPayMove = toPayMove + toPayMove/10;
+        }
+    }
+
+
+    //Shoot function
     private void OnTriggerStay2D(Collider2D collision) {
         if(fireTimer >= NextToFire){
              Shoot();
             fireTimer = 0;
      }
     }
-    
-
     private void Shoot(){
         Instantiate(Bullet, FiringPoint.position, FiringPoint.rotation);
     }
 
 
+    
+    
     void Update()
     {
+        //FireRate things
         fireTimer += Time.fixedDeltaTime;
-
         NextToFire = 1/ fireRate;
         
     }

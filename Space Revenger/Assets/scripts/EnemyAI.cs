@@ -36,6 +36,7 @@ public class EnemyAI : MonoBehaviour
     {
         if(collision.TryGetComponent<Bullet_AI>(out Bullet_AI Bullet)){
             Destroy(gameObject);
+            
         }
         
     }
