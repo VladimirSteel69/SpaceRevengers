@@ -1,7 +1,7 @@
 # SpaceRevenger
 ----------------
 
-  ##Welcome Space Captain to your own adventure!
+        Welcome Space Captain to your own adventure!
  
  This is an story...
  
