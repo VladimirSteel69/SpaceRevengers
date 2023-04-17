@@ -1,10 +1,10 @@
 # SpaceRevenger
 ----------------
 
-##Welcome Space Captain to your own adventure!
+##Welcome Space Captain to your own adventure!/n
   This is an story...
 ----------------
 
-#Brought to you by the EclipseBrothers
-  You can find us at : 
+#Brought to you by the EclipseBrothers /n
+  You can find us at : /n
           - eclipsebrother@gmail.com
