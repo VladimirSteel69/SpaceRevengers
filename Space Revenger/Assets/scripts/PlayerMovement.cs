@@ -9,26 +9,35 @@ public class PlayerMovement : MonoBehaviour
     // Gun things
     [SerializeField] private GameObject Bullet;
     [SerializeField] private Transform FiringPoint;
-    [SerializeField] private float fireRate = 0.5f;
-    private float fireTimer = 0.5f;
-
-    private void OnTriggerEnter2D(Collider2D collision) {
-        if(fireTimer <= 0f){
-        Shoot();
-        fireTimer = fireRate;
-        }
+    [SerializeField] public float fireRate = 0.2f;
+    private float fireTimer;
+    public float NextToFire;
+    
+    //AttackSpeed Upgrade
+    public void ButtonPressedAtSpd(){
+        if(fireRate > 0.1f)
+        fireRate += 0.05f;
     }
+
+    private void OnTriggerStay2D(Collider2D collision) {
+        if(fireTimer >= NextToFire){
+             Shoot();
+            fireTimer = 0;
+     }
+    }
+    
 
     private void Shoot(){
         Instantiate(Bullet, FiringPoint.position, FiringPoint.rotation);
     }
 
-    
-
 
     void Update()
     {
-            fireTimer -= Time.deltaTime;
+        fireTimer += Time.fixedDeltaTime;
+
+        NextToFire = 1/ fireRate;
+        
     }
 
     void FixedUpdate()
@@ -49,13 +58,6 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
-
-        // Gun things (if same angle shoot)
-        /*if(enemy)
-            if(Vector3.Angle(enemy.transform.forward, transform.position - enemy.transform.position) < angle && fireTimer <= 0f){
-                Shoot();
-                fireTimer = fireRate;
-        }else fireTimer -= Time.deltaTime;*/
     }
 
 }

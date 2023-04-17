@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet_AI : MonoBehaviour
 {
 
-    [SerializeField] public float speed = 10f;
+    [SerializeField] private float speed = 1f;
 
     [SerializeField] private float lifeTime = 100f;
 
@@ -29,5 +29,11 @@ public class Bullet_AI : MonoBehaviour
         if(collision.TryGetComponent<EnemyAI>(out EnemyAI enemy)){
             Destroy(gameObject);
         }
+    }
+
+
+    //Upgrade
+    public void ButtonPressed(){
+        speed += 0.05f;
     }
 }
