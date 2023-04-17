@@ -1,10 +1,9 @@
 # SpaceRevenger
 ----------------
 
-#Welcome Space Captain to your own adventure!
-
-
-  This is an story...
+  Welcome Space Captain to your own adventure!
+ 
+ This is an story...
 -----------------------------------
 
 #Brought to you by the EclipseBrothers 
