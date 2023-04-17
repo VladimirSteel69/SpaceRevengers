@@ -11,6 +11,6 @@
 #Brought to you by the EclipseBrothers 
 
    You can find us at : 
-   *eclipsebrother@gmail.com
+    eclipsebrother@gmail.com
   
 -------------------------------------
