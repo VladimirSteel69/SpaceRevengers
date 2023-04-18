@@ -21,7 +21,13 @@ public class Enemy_Spawn_Script : MonoBehaviour
     void Start()
     {
         
+        
+    }
+    public void startgame(){
         StartCoroutine(Spawner());
+    }
+    public void stopgame(){
+        Is_Spawned = false;
     }
 
     private IEnumerator Spawner(){
@@ -46,6 +52,7 @@ public class Enemy_Spawn_Script : MonoBehaviour
                 Instantiate(enemyToSpawn, new Vector3(-4f, Random.Range(-6, -2f), 0), Quaternion.identity);
             if(spawn_side == 5)
                 Instantiate(enemyToSpawn, new Vector3(4f, Random.Range(-6, -2f), 0), Quaternion.identity);
+            
             
         }
     }

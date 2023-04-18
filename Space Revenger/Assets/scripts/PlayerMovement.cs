@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 200f; //variabila de viteza
+    [SerializeField] public bool movement = false;
 
     // Gun things
     [SerializeField] private GameObject Bullet;
@@ -55,7 +56,13 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    
+    public void enableMovement(){
+        movement = true;
+    }
+
+    public void disableMovement(){
+        movement = false;
+    }
     
     void Update()
     {
@@ -67,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Input.touchCount > 0) //monitorizare atingerilor(in cazul in care sunt mai multe)
+        if (Input.touchCount > 0 && movement == true) //monitorizare atingerilor(in cazul in care sunt mai multe)
         {
             Touch touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved)    //se verifica daca ecranul este apsat
