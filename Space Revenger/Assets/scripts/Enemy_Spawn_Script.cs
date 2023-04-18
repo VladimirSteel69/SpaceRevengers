@@ -17,17 +17,15 @@ public class Enemy_Spawn_Script : MonoBehaviour
     [SerializeField] public int spawn_side;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-        
-    }
+    [SerializeField] private bool PlayGame;
+
+    
     public void startgame(){
+        PlayGame = true;
         StartCoroutine(Spawner());
     }
     public void stopgame(){
-        Is_Spawned = false;
+        PlayGame = false;
     }
 
     private IEnumerator Spawner(){
@@ -36,7 +34,8 @@ public class Enemy_Spawn_Script : MonoBehaviour
 
         while(Is_Spawned){
             yield return wait;
-            
+
+            if(PlayGame == true){
             spawn_side = Random.Range(0, 6);
             int rand = Random.Range(0, enemy.Length);
             GameObject enemyToSpawn = enemy[rand];
@@ -52,7 +51,7 @@ public class Enemy_Spawn_Script : MonoBehaviour
                 Instantiate(enemyToSpawn, new Vector3(-4f, Random.Range(-6, -2f), 0), Quaternion.identity);
             if(spawn_side == 5)
                 Instantiate(enemyToSpawn, new Vector3(4f, Random.Range(-6, -2f), 0), Quaternion.identity);
-            
+            }
             
         }
     }
