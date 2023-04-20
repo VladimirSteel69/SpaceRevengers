@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovementMiniGame : MonoBehaviour
 {
+
+    //scene change
+    public Animator transition;
+
+
     public Transform player;
     public float speed = 5f;
     private int lives = 3;
@@ -12,6 +18,8 @@ public class PlayerMovementMiniGame : MonoBehaviour
 
     private Vector2 pointA;
     private Vector2 pointB;
+
+
 
     // Update is called once per frame
     void Update()
@@ -53,6 +61,19 @@ public class PlayerMovementMiniGame : MonoBehaviour
     {
         lives--;
         if(lives == 0)
+        {
+            LoadMainGame();
             Destroy(this.gameObject);
+        }
+    }
+
+    public void LoadMainGame(){
+
+        //play animation
+        transition.SetTrigger("Start");
+        //wait
+        new WaitForSeconds(1);
+        //Load scene
+        SceneManager.LoadScene("MainGame");
     }
 }
