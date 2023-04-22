@@ -7,10 +7,23 @@ public class EnemyAI : MonoBehaviour
 {
     public Transform target;
 
+    public bool PlayGame = false;
+
     public float speed = 5f;
     public float rotateSpeed = 2000f;
 
     private Rigidbody2D rb;
+
+
+    public void startgame(){
+        PlayGame = true;
+        
+    }
+    public void stopgame(){
+        PlayGame = false;
+    }
+        
+    
 
     // Start is called before the first frame update
     void Start()
@@ -32,13 +45,19 @@ public class EnemyAI : MonoBehaviour
         rb.velocity = transform.up * speed;
     }
 
+    private void Update() {
+        if(PlayGame == false)
+            Destroy(gameObject);
+
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.TryGetComponent<Bullet_AI>(out Bullet_AI Bullet)){
             Destroy(gameObject);
             
         }
-        
+
     }
     private void OnCollisionEnter2D(Collision2D collision) {
         Destroy(gameObject);

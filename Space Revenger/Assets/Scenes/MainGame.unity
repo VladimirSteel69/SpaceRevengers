@@ -239,10 +239,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy:
   - {fileID: 5767905802506482110, guid: 13f4c1df7fa67204f9279520b918a14c, type: 3}
-  spawn_rate: 4
+  spawn_rate: 3
   Is_Spawned: 1
   spawn_side: 0
-  PlayGame: 0
 --- !u!4 &126468605
 Transform:
   m_ObjectHideFlags: 0
@@ -1018,8 +1017,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 126468604}
-        m_TargetAssemblyTypeName: Enemy_Spawn_Script, Assembly-CSharp
+      - m_Target: {fileID: 5767905802506482106, guid: 13f4c1df7fa67204f9279520b918a14c, type: 3}
+        m_TargetAssemblyTypeName: EnemyAI, Assembly-CSharp
         m_MethodName: stopgame
         m_Mode: 1
         m_Arguments:
@@ -1736,8 +1735,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 126468604}
-        m_TargetAssemblyTypeName: Enemy_Spawn_Script, Assembly-CSharp
+      - m_Target: {fileID: 5767905802506482106, guid: 13f4c1df7fa67204f9279520b918a14c, type: 3}
+        m_TargetAssemblyTypeName: EnemyAI, Assembly-CSharp
         m_MethodName: startgame
         m_Mode: 1
         m_Arguments:
@@ -1746,7 +1745,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1926771434}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
@@ -1983,54 +1982,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
---- !u!1 &1048692113
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1048692115}
-  - component: {fileID: 1048692114}
-  m_Layer: 0
-  m_Name: MoneyManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1048692114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1048692113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5df35e8fcfb6fc242958107e5a88f566, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MyMoney: {fileID: 1802166992}
-  currentMoney: 100
-  moneyIncome: 10
-  toPayMony: 10
---- !u!4 &1048692115
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1048692113}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.7649149}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1304719982
 GameObject:
   m_ObjectHideFlags: 0
@@ -2476,7 +2427,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1048692114}
+      - m_Target: {fileID: 1802166994}
         m_TargetAssemblyTypeName: MoneyScript, Assembly-CSharp
         m_MethodName: MoneyUpgrade
         m_Mode: 1
@@ -2537,6 +2488,7 @@ GameObject:
   - component: {fileID: 1802166991}
   - component: {fileID: 1802166993}
   - component: {fileID: 1802166992}
+  - component: {fileID: 1802166994}
   m_Layer: 5
   m_Name: MyMoney
   m_TagString: Untagged
@@ -2561,7 +2513,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -85, y: 752.50146}
+  m_AnchoredPosition: {x: -88.272, y: 743.28}
   m_SizeDelta: {x: 583.455, y: 81.568}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1802166992
@@ -2597,7 +2549,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Money:'
+  m_Text: 
 --- !u!222 &1802166993
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2606,6 +2558,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1802166990}
   m_CullTransparentMesh: 1
+--- !u!114 &1802166994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802166990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5df35e8fcfb6fc242958107e5a88f566, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyMoney: {fileID: 1802166992}
+  currentMoney: 100
+  moneyIncome: 10
+  toPayMony: 10
 --- !u!1 &1926771433
 GameObject:
   m_ObjectHideFlags: 0

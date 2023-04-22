@@ -17,15 +17,10 @@ public class Enemy_Spawn_Script : MonoBehaviour
     [SerializeField] public int spawn_side;
 
 
-    [SerializeField] private bool PlayGame;
-
     
-    public void startgame(){
-        PlayGame = true;
+
+    private void Start() {
         StartCoroutine(Spawner());
-    }
-    public void stopgame(){
-        PlayGame = false;
     }
 
     private IEnumerator Spawner(){
@@ -35,7 +30,6 @@ public class Enemy_Spawn_Script : MonoBehaviour
         while(Is_Spawned){
             yield return wait;
 
-            if(PlayGame == true){
             spawn_side = Random.Range(0, 6);
             int rand = Random.Range(0, enemy.Length);
             GameObject enemyToSpawn = enemy[rand];
@@ -51,7 +45,7 @@ public class Enemy_Spawn_Script : MonoBehaviour
                 Instantiate(enemyToSpawn, new Vector3(-4f, Random.Range(-6, -2f), 0), Quaternion.identity);
             if(spawn_side == 5)
                 Instantiate(enemyToSpawn, new Vector3(4f, Random.Range(-6, -2f), 0), Quaternion.identity);
-            }
+            
             
         }
     }
