@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnAsteroids : MonoBehaviour
 {
     public GameObject asteroidPrefab;
+    public Transform player;
     public float respawnTime = 1f;
 
     private Vector2 screenBounds;
@@ -19,7 +20,7 @@ public class SpawnAsteroids : MonoBehaviour
     private void spawnAsteroids()
     {
         GameObject a = Instantiate(asteroidPrefab) as GameObject;
-        a.transform.position = new Vector2(Random.Range(-screenBounds.x, screenBounds.x), screenBounds.y * 1.3f);
+        a.transform.position = new Vector2(player.position.x, screenBounds.y * 1.3f);
     }
 
     IEnumerator astroidWave()
