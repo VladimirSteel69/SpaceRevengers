@@ -1181,6 +1181,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_mini
       objectReference: {fileID: 0}
+    - target: {fileID: 6591607966988170187, guid: 4a4a25ff5e8c3024bafa4f3d0caedc19, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b102236af0f59644cb1f7df89640c10e, type: 3}
     - target: {fileID: 6591607966988170190, guid: 4a4a25ff5e8c3024bafa4f3d0caedc19, type: 3}
       propertyPath: circle
       value: 
