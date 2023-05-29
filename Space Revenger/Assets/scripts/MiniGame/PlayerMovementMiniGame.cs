@@ -31,7 +31,7 @@ public class PlayerMovementMiniGame : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             pointA = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.transform.position.z));
-            circle.transform.position = pointA * -1;
+            circle.transform.position = pointA;
             outerCircle.transform.position = pointA;
             circle.GetComponent<SpriteRenderer>().enabled = true;
             outerCircle.GetComponent<SpriteRenderer>().enabled = true;

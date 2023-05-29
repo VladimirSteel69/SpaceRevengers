@@ -2973,11 +2973,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!95 &2005750880 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3344751041899973509, guid: b2688837a0b971d43a0394b7b533c88a, type: 3}
-  m_PrefabInstance: {fileID: 3344751040892526773}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3344751040892526773
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2985,10 +2980,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3344751041758838900, guid: b2688837a0b971d43a0394b7b533c88a, type: 3}
-      propertyPath: transition
-      value: 
-      objectReference: {fileID: 2005750880}
     - target: {fileID: 3344751041758838901, guid: b2688837a0b971d43a0394b7b533c88a, type: 3}
       propertyPath: m_Name
       value: TransitionToMini

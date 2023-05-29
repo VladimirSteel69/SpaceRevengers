@@ -13,8 +13,8 @@ public class Boundaries : MonoBehaviour
     {
         //un artificiu prin care marginile "lumii" din unity coincid cu marginile ecranului
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-        objectWidth = transform.GetComponent<SpriteRenderer>().bounds.size.x / 2;
-        objectHeight = transform.GetComponent<SpriteRenderer>().bounds.size.y / 2;
+        objectWidth = transform.GetComponent<SpriteRenderer>().bounds.size.x / 4;
+        objectHeight = transform.GetComponent<SpriteRenderer>().bounds.size.y / 4;
     }
 
     // Update is called once per frame
