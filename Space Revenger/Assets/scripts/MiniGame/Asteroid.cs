@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Asteroid : MonoBehaviour
 {
+
     public float speed = 2f;
     public Rigidbody2D rb;
     private Vector2 screenBounds;
@@ -18,6 +19,8 @@ public class Asteroid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        RotateLeft();
         if (transform.position.y < screenBounds.y * -2)
         {
             Destroy(this.gameObject);
@@ -31,4 +34,8 @@ public class Asteroid : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    void RotateLeft () {
+         transform.Rotate (Vector3.forward * 3);
+     }
 }

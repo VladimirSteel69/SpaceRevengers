@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class SpawnAsteroids : MonoBehaviour
 {
-    public GameObject asteroidPrefab;
+    [SerializeField] public GameObject[] asteroidPrefab;
+
+    
+
     public Transform player;
+
     public float respawnTime = 1f;
 
     private Vector2 screenBounds;
+
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +24,8 @@ public class SpawnAsteroids : MonoBehaviour
 
     private void spawnAsteroids()
     {
-        GameObject a = Instantiate(asteroidPrefab) as GameObject;
+        int rand = Random.Range(0, asteroidPrefab.Length);
+        GameObject a = Instantiate(asteroidPrefab[rand]) as GameObject;
         a.transform.position = new Vector2(player.position.x, screenBounds.y * 1.3f);
     }
 
