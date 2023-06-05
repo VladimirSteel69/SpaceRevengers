@@ -124,6 +124,8 @@ MonoBehaviour:
   PlayGame: 0
   speed: 1
   rotateSpeed: 2000
+  explosion: {fileID: 8753805586594348274, guid: b0b1e4f2cd3c2294eafec97bdc4a69a5, type: 3}
+  enemy: {fileID: 5767905802506482105}
 --- !u!60 &5767905802506482084
 PolygonCollider2D:
   m_ObjectHideFlags: 0

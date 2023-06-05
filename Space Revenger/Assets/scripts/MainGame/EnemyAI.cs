@@ -14,6 +14,9 @@ public class EnemyAI : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    public GameObject explosion;
+    public Transform enemy;
+
 
     public void startgame(){
         PlayGame = true;
@@ -54,12 +57,14 @@ public class EnemyAI : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.TryGetComponent<Bullet_AI>(out Bullet_AI Bullet)){
+            Instantiate(explosion, new Vector2(enemy.position.x, enemy.position.y), Quaternion.identity);
             Destroy(gameObject);
-            
         }
 
     }
+
     private void OnCollisionEnter2D(Collision2D collision) {
+        Instantiate(explosion, new Vector2(enemy.position.x, enemy.position.y), Quaternion.identity);
         Destroy(gameObject);
     }
 }
