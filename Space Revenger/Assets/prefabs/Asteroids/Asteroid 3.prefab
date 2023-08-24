@@ -138,3 +138,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   rb: {fileID: 2435929339003861945}
+  asteroid: {fileID: 2388618743722742711}
+  explosion: {fileID: 4501019112311376755, guid: 63737013e6e819c4d9945435ca53e4b4, type: 3}

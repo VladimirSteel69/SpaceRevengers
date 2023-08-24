@@ -100,9 +100,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.05106977, y: -0.10781476}
   serializedVersion: 2
-  m_Radius: 0.45952946
+  m_Radius: 0.62976277
 --- !u!50 &2435929339003861945
 Rigidbody2D:
   serializedVersion: 4
@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 881f417039fbcb148b517812b6364d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationDirection: 1
   speed: 3
   rb: {fileID: 2435929339003861945}
+  asteroid: {fileID: 2388618743722742711}
+  explosion: {fileID: 4501019112311376755, guid: 63737013e6e819c4d9945435ca53e4b4, type: 3}

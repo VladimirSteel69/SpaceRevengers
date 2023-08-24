@@ -9,6 +9,8 @@ public class Asteroid : MonoBehaviour
     public Rigidbody2D rb;
     private Vector2 screenBounds;
     private float rotationSpeed;
+    public Transform asteroid;
+    public GameObject explosion;
 
 
     // Start is called before the first frame update
@@ -30,12 +32,16 @@ public class Asteroid : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collider.TryGetComponent<PlayerMovementMiniGame>(out PlayerMovementMiniGame player))
-        {
-            Destroy(this.gameObject);
-        }
+        Instantiate(explosion, new Vector2(asteroid.position.x, asteroid.position.y), Quaternion.identity);
+        Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Instantiate(explosion, new Vector2(asteroid.position.x, asteroid.position.y), Quaternion.identity);
+        Destroy(gameObject);
     }
 
     void RotateLeft () 
